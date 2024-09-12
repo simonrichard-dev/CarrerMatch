@@ -32,6 +32,7 @@
    DB_USERNAME=votre_nom_utilisateur
    DB_PASSWORD=votre_mot_de_passe
    DB_HOST=localhost
-   DB_NAME=carrermatch
+   DB_NAME=careermatch
+   
    ```
 5. **Configurer la base de données :**
