@@ -26,6 +26,7 @@
    ```bash
    pip install -r requirements.txt
    ```
+
 4. **Configurer les varialles d'environnement :**
    Créer un fichier `.env` dans le dossier `back-end` et y ajouter les variables d'environnement suivantes :
    ```env
@@ -33,6 +34,39 @@
    DB_PASSWORD=votre_mot_de_passe
    DB_HOST=localhost
    DB_NAME=careermatch
-   
+   SECRET_KEY=ma_cle_secrète
    ```
-5. **Configurer la base de données :**
+   Remplacez `nom_utilisateur`, `mot_de_passe`, `ma_cle_secrète` par vos valeurs spécifiques.
+
+5. **Démarrer MySQL :**
+
+   Assurez-vous que le serveur MySQL est en cours d'exécution. Vous pouvez démarrer MySQL avec la commande suivante, en fonction de votre système d'exploitation :
+
+   Sur Ubuntu :
+
+   ```bash
+   Copier le code
+   sudo service mysql start
+   ```
+
+7. **Initialiser la base de données :**
+
+   Mise à jour des modèles pour la migration :
+
+   ```bash
+   flask db migrate -m message_de_commit
+   ```
+
+   Exécutez les migrations pour créer les tables nécessaires dans la base de données :
+
+   ```bash
+   flask db upgrade
+   ```
+
+8. **Démarrer l'application :**
+
+   Lancez l'application Flask :
+
+   ```bash
+   flask run
+   ```

@@ -1,3 +1,4 @@
+# back-end/models/job_posting.py
 from sqlalchemy import Column, Integer, String, Text, TIMESTAMP, Enum, ForeignKey
 from sqlalchemy.orm import relationship
 from app import db
