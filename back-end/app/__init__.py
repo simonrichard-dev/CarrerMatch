@@ -34,30 +34,31 @@ def create_app():
     from .routes import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
-    # # Test d'export de données à retirer (ne pas)
-    # new_company = Company(
-    #     company_id = 2,
-    #     name = 'HolbertonSchool',
-    #     email = 'holberton@holbertonschool.com',
-    #     password = 'abc123!$'
-    #     )
-    
-    new_user = User(
-        user_id = 0,
-        name = 'Jérémy',
-        email = 'jeremy@holbertonschool.com',
-        password_hash = 'Jeremytypescript'
-    )
-    
-    # new_message = Message(
-    #     sender_id = 1,  # ou company_id
-    #     sender_type = 'user',  # ou 'company'
-    #     receiver_id = 1,  # ou user_id
-    #     receiver_type = 'company',  # ou 'user'
-    #     message_text = "Bonjour, je suis intéressé par votre annonce."
-    #     )
-    
+    # Test d'export de données à retirer (ne pas)
     with app.app_context() :
+        # new_company = Company(
+        #     company_id = 2,
+        #     name = 'HolbertonSchool',
+        #     email = 'holberton@holbertonschool.com',
+        #     password = 'abc123!$'
+        #     )
+    
+        new_user = User(
+            name = 'Youss',
+            email = 'youss@holbertonschool.com'
+        )
+    
+        new_user.set_password('youss_H4cker')  # Hash du mot de passe
+
+        # new_message = Message(
+        #     sender_id = 1,  # ou company_id
+        #     sender_type = 'user',  # ou 'company'
+        #     receiver_id = 1,  # ou user_id
+        #     receiver_type = 'company',  # ou 'user'
+        #     message_text = "Bonjour, je suis intéressé par votre annonce."
+        #     )
+    
+    
         # db.session.add(new_company)
         db.session.add(new_user)
         # db.session.add(new_message)
