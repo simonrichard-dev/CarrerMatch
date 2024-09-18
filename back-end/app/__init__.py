@@ -25,7 +25,7 @@ def create_app():
 
     # Importer les modèles pour que Flask-Migrate puisse les détecter
     from models.user import User
-    # from models.company import Company
+    from models.proposal import Proposal
     # from models.job_posting import JobPosting
     # from models.match import Match
     # from models.message import Message
@@ -35,33 +35,35 @@ def create_app():
     app.register_blueprint(main_blueprint)
 
     # Test d'export de données à retirer (ne pas)
-    with app.app_context() :
-        # new_company = Company(
-        #     company_id = 2,
-        #     name = 'HolbertonSchool',
-        #     email = 'holberton@holbertonschool.com',
-        #     password = 'abc123!$'
-        #     )
+    # with app.app_context() :
+    #     new_proposal = Proposal(
+    #         title = 'Jérémy_proposal',
+    #         pdf_url = 'jérémy@holberton.com/proposal_cv',
+    #         video_url = 'jérémy@holberton.com/proposal_video',
+    #         type = 'cv'
+    #         )
     
-        new_user = User(
-            name = 'Youss',
-            email = 'youss@holbertonschool.com'
-        )
+    #     # new_user = User(
+    #     #     email = 'jérémy@holberton.com',
+    #     #     username = 'jérémy',
+    #     #     address = '2 rue de l\'école 95000 Cergy',
+    #     #     user_type = 'individual',
+    #     # )
     
-        new_user.set_password('youss_H4cker')  # Hash du mot de passe
+    #     # new_user.set_password('Typ3_Scripter!')  # Hash du mot de passe
 
-        # new_message = Message(
-        #     sender_id = 1,  # ou company_id
-        #     sender_type = 'user',  # ou 'company'
-        #     receiver_id = 1,  # ou user_id
-        #     receiver_type = 'company',  # ou 'user'
-        #     message_text = "Bonjour, je suis intéressé par votre annonce."
-        #     )
+    #     # new_message = Message(
+    #     #     sender_id = 1,  # ou company_id
+    #     #     sender_type = 'user',  # ou 'company'
+    #     #     receiver_id = 1,  # ou user_id
+    #     #     receiver_type = 'company',  # ou 'user'
+    #     #     message_text = "Bonjour, je suis intéressé par votre annonce."
+    #     #     )
     
     
-        # db.session.add(new_company)
-        db.session.add(new_user)
-        # db.session.add(new_message)
-        db.session.commit()
+    #     # db.session.add(new_company)
+    #     # db.session.add(new_user)
+    #     db.session.add(new_proposal)
+    #     db.session.commit()
 
     return app
